@@ -38,5 +38,11 @@ func moveIfPossible():
 	#move but dont move when it would collide the next step
 	move_and_slide(movement)
 
+func _input(event):
+	# Mouse in viewport coordinates
+	if event is InputEventMouseButton:
+		print("Mouse Click/Unclick at: ", event.position)
+		shootToPosition()
 
-
+func shootToPosition():
+	pass
