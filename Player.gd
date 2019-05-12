@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 
-export var speed = 200 
+export var speed = 400
 var screen_size  # Size of the game window.
 
 # Declare member variables here. Examples:
@@ -37,3 +37,6 @@ func moveIfPossible():
 	
 	#move but dont move when it would collide the next step
 	move_and_slide(movement)
+
+
+
