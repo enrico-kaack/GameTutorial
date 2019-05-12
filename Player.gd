@@ -3,6 +3,7 @@ extends KinematicBody2D
 
 export var speed = 400
 var screen_size  # Size of the game window.
+var Bullet = preload("res://Bullet.tscn")
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -41,8 +42,13 @@ func moveIfPossible():
 func _input(event):
 	# Mouse in viewport coordinates
 	if event is InputEventMouseButton:
-		print("Mouse Click/Unclick at: ", event.position)
-		shootToPosition()
+		if event.button_index == BUTTON_LEFT and event.pressed:
+			shootToPosition(event.global_position)
 
-func shootToPosition():
-	pass
+func shootToPosition(target):
+	var dir = target - global_position
+	print(global_position)
+	var bullet = Bullet.instance()
+	bullet.start(global_position, dir, rotation)
+	get_parent().add_child(bullet)
+	
