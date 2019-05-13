@@ -42,6 +42,8 @@ shape = SubResource( 2 )
 
 [node name="Player2" type="KinematicBody2D" parent="."]
 position = Vector2( 620.92, 391.03 )
+collision_layer = 2
+collision_mask = 0
 script = ExtResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player2"]
